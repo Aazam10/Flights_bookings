@@ -1,13 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const { bookingRoutes } = require("./booking-routes");
 
-router.get("/info", (req, res) => {
-    res.status(200).json({
-        success: true,
-        data: {},
-        error: {},
-    });
-});
+router.use("/booking", bookingRoutes);
 
 module.exports = {
     v1Routes: router,
